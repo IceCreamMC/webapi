@@ -1,0 +1,12 @@
+{
+    "sharkur": {
+        "project-id": "sharkur",
+        "project-name": "Sharkur",
+        "version-groups": [
+            "1.19"
+        ],
+        "versions": [
+            "1.19"
+        ]
+    }
+}
