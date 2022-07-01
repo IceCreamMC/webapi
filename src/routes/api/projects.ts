@@ -27,7 +27,7 @@ router.get('/:project/version_group/:versiongroup/builds', async(req, res) => {
     const builds = [];
 
     for (const buildId of buildIds) {
-        const build = await (await fetch('http://localhost:8080/api/v2/projects/'+projectName+'/version_group/'+versiongroup+'/builds/'+buildId)).json() as any;
+        const build = await (await fetch('http://localhost:8989/api/v2/projects/'+projectName+'/version_group/'+versiongroup+'/builds/'+buildId)).json() as any;
         if (build.result !== 'SUCCESS' || !build.downloads.application.name) continue;
         builds.push(build);
     }
