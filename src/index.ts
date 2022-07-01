@@ -9,7 +9,7 @@ const app = express();
         app.use('/api/v2/'+file.split('.')[0], require('./routes/api/'+file).default);
     }
     
-    app.listen(8080, () => {
-        console.log('🚀 Server is running on port 8080');
+    app.listen(8989, () => {
+        console.log('🚀 Server is running on port 8989');
     })
 })();
