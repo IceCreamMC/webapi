@@ -65,7 +65,7 @@ router.get('/:project/version_group/:versiongroup/builds/:buildid', async(req, r
             commit: change.commitId,
             summary: change.msg,
             message: change.comment,
-        })) || [{commit: null, summary: null, message: null}],
+        })) || null,
         downloads: {
             application: {
                 name: build.artifacts?.[0]?.fileName ?? null,
