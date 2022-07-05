@@ -75,18 +75,18 @@ router.get('/:project/version_group/:versiongroup/builds/:buildid', async(req, r
     })
 })
 
-router.get('/:project/version_group/:versiongroup/builds/:buildid/downloads/:name', async(req, res) => {
-    const versiongroup = req.params.versiongroup as string;
+router.get('/:project/versions/:version/builds/:buildid/downloads/:name', async(req, res) => {
+    const version = req.params.version as string;
     const buildId = req.params.buildid as string;
     const name = req.params.name as string;
-    if (!versiongroup || !buildId || !name) {
+    if (!version || !buildId || !name) {
         res.status(400).json({
             error: 'Missing parameters'
         })
         return;
     }
 
-    res.redirect('https://jenkins.cezarsalat.tk/job/Sharkur/job/ver%252F'+versiongroup+'/'+buildId+'/artifact/build/libs/'+name);
+    res.redirect('https://jenkins.cezarsalat.tk/job/Sharkur/job/ver%252F'+version+'/'+buildId+'/artifact/build/libs/'+name);
 })
 
 export default router;
