@@ -61,11 +61,11 @@ router.get('/:project/version_group/:versiongroup/builds/:buildid', async(req, r
         channel: 'default',
         result: build.result,
         promoted: false,
-        changes: build.changeSets[0].items.map(change => new Object({
+        changes: build.changeSets?.[0]?.items?.map(change => new Object({
             commit: change.commitId,
             summary: change.msg,
             message: change.comment,
-        })),
+        })) || null,
         downloads: {
             application: {
                 name: build.artifacts?.[0]?.fileName ?? null,
