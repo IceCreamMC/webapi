@@ -23,7 +23,7 @@ router.get('/:project/version_group/:versiongroup/builds', async(req, res) => {
         return;
     }
 
-    const buildIds = (await (await fetch('https://jenkins.cezarsalat.tk/job/Sharkur/job/ver%252F'+versiongroup+'/wfapi/runs/')).json() as unknown as any[]).map(run => run.id);
+    const buildIds = (await (await fetch('http://ci.icecreammc.xyz/job/IceCream/job/ver%252F'+versiongroup+'/wfapi/runs/')).json() as unknown as any[]).map(run => run.id);
     const builds = [];
 
     for (const buildId of buildIds) {
@@ -52,7 +52,7 @@ router.get('/:project/version_group/:versiongroup/builds/:buildid', async(req, r
         return;
     }
 
-    const build = await (await fetch('https://jenkins.cezarsalat.tk/job/Sharkur/job/ver%252F'+versiongroup+'/'+buildId+'/api/json?pretty=true')).json() as any;
+    const build = await (await fetch('https://ci.icecreammc.xyz/job/IceCream/job/ver%252F'+versiongroup+'/'+buildId+'/api/json?pretty=true')).json() as any;
 
     res.json({
         version: versiongroup,
@@ -86,7 +86,7 @@ router.get('/:project/versions/:version/builds/:buildid/downloads/:name', async(
         return;
     }
 
-    res.redirect('https://jenkins.cezarsalat.tk/job/Sharkur/job/ver%252F'+version+'/'+buildId+'/artifact/build/libs/'+name);
+    res.redirect('https://ci.icecreammc.xyz/job/IceCream/job/ver%252F'+version+'/'+buildId+'/artifact/build/libs/'+name);
 })
 
 export default router;

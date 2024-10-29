@@ -1,12 +1,12 @@
 {
-    "sharkur": {
-        "project-id": "sharkur",
-        "project-name": "Sharkur",
+    "icecream": {
+        "project-id": "icecream",
+        "project-name": "IceCream",
         "version-groups": [
-            "1.19"
+            "1.21"
         ],
         "versions": [
-            "1.19"
+            "1.21"
         ]
     }
 }
